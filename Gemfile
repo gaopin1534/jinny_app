@@ -9,12 +9,15 @@ gem 'haml-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'rails-i18n'
+gem 'less-rails'
 gem 'mysql2'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sorcery'
 gem 'sqlite3'
 gem 'turbolinks'
+gem 'therubyracer'
+gem 'twitter-bootstrap-rails'
 gem 'uglifier', '>= 1.3.0'
 
 

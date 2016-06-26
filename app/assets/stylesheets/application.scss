@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+//header
+
+.navbar-brand {
+  margin-left: -15px;
+}
+.navbar-default {
+  padding-top: 10px;
+  font-family: serif;
+  font-style: italic;
+  background-color: white;
+  border: none;
+  .navbar-brand {
+    padding-right:0;
+    padding-bottom:0;
+    font-size: 50px;
+    color: black;
+    &:hover {
+      color:black;
+    }
+  }
+  ul.navbar-nav {
+    border-bottom:solid 1px #000;
+    li {
+      a{
+        font-size: 20px;
+        color: black;
+        &:hover{
+          color:gray;
+        }
+      }
+      &.signup {
+        border-top:solid 1px #000;
+        border-right:solid 1px #000;
+        border-left:solid 1px #000;
+        border-bottom:none 1px #000;
+      }
+    }
+  }
+}
