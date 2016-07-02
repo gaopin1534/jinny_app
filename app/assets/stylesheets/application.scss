@@ -15,11 +15,26 @@
  */
 
 //header
+.container {
+  max-width: none !important;
+  width: 1070px;
+}
+.navbar-collapse {
+  display: block !important;
+  height: auto !important;
+  padding-bottom: 0;
+  overflow: visible !important;
+}
+
+.navbar-toggle {
+  display: none;
+}
 
 .navbar-brand {
   margin-left: -15px;
 }
 .navbar-default {
+  margin:50px auto;
   padding-top: 10px;
   font-family: serif;
   font-style: italic;
@@ -28,7 +43,7 @@
   .navbar-brand {
     padding-right:0;
     padding-bottom:0;
-    font-size: 50px;
+    font-size: 45px;
     color: black;
     &:hover {
       color:black;
@@ -38,7 +53,7 @@
     border-bottom:solid 1px #000;
     li {
       a{
-        font-size: 20px;
+        font-size: 17px;
         color: black;
         &:hover{
           color:gray;
