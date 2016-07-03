@@ -7,8 +7,11 @@
 
 %body
 = render partial: "layouts/header"
-%p.notice
-  = notice
-%p.alert
-  = alert
+%div.container
+  - if notice
+    %p.notice
+      = notice
+  - if alert
+    %p.alert
+      = alert
 = yield
