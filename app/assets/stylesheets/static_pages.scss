@@ -26,20 +26,30 @@
   color: #fff;
 }
 
-.infoBox {
-  margin-top:30px;
-  border-top:solid 1px #000;
-  height:200px;
+
+.followingBox{
+  margin-top: 50px;
+  font-size:20px;
 }
-.infoElm{
-  margin-top: 30px;
+
+//about
+.locodineTitle{
+  font-size: 50px;
+  font-weight: bold;
 }
-.leftBox {
-  float:left
+
+.titleAttatchment{
+  font-size: 30px;
+  margin-left: 15px;
+  font-weight: bold;
 }
-.rightBox {
-  float: right;
+
+.preparagraph {
+  font-size: 27px;
+  margin-top: 20px;
+  font-weight: bold;
 }
-.clear {
-  clear:both;
+.aboutFollowing {
+  margin-top: 20px;
+  font-size: 21px;
 }

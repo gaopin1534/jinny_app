@@ -10,13 +10,13 @@
     %div.navbar-collapse.collapse
       %ul.nav.navbar-nav
         %li
-          %a{href: "#"}Booking Procedures
+          = link_to 'Booking Procedures', static_pages_procedure_path
         %li
-          %a{href: "#"}Book Now
+          = link_to 'Book Now', '#'
         %li
-          %a{href: "#"}About
+          = link_to 'About', static_pages_about_path
         %li
-          %a{href: "#"}Contact Us
+          = link_to 'Contact US', inquiry_index_path
         - if user_signed_in?
           %li
             = link_to 'My page', current_user
@@ -24,6 +24,6 @@
             = link_to 'Log Out', destroy_user_session_path, method: :delete
         - else
           %li.signup
-            = link_to 'Sign Up', new_user_registration_path
-          %li.signup
             = link_to 'Log In', new_user_session_path
+          %li.signup
+            = link_to 'SIGNUP NOW', new_user_registration_path
