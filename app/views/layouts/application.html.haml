@@ -8,10 +8,10 @@
 %body
 = render partial: "layouts/header"
 %div.container
-  = if notice
+  - if notice
     %p.notice
       = notice
-  = if alert
+  - if alert
     %p.alert
       = alert
 = yield
