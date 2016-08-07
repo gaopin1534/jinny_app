@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'static_pages#home'
+  resourves :bokkings, :only=> [:new, :create]
   resources :users, :only => [:show]
   get 'static_pages/procedure'
   get 'static_pages/about'
