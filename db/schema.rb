@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160807120034) do
+ActiveRecord::Schema.define(version: 20160807135024) do
 
   create_table "bookings", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.integer  "member_num", limit: 4
     t.string   "message",    limit: 255
-    t.time     "date"
+    t.datetime "date"
     t.integer  "user_id",    limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false

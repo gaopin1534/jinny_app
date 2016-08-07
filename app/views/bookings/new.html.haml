@@ -1,2 +1,34 @@
-%h1 Bookings#new
-%p Find me in app/views/bookings/new.html.haml
+%div.container
+  %h2
+    %strong
+      Book Now!!
+  %ul.nav.nav-tabs
+    %li.nav-item.active
+      %a.nav-link.bg-primary{href: "#normal", data: {toggle: "tab"}}
+        normal plan
+    %li.nav-item
+      %a.nav-link.bg-primary{href: "#exclusive", data: {toggle: "tab"}}
+        exclusive plan
+
+  %div.tab-content
+    %div.tab-pane.active{id: "normal"}
+      = form_for @booking do |f|
+        .form-group
+          = f.label :name, "where to book?" , class: "control-label"
+          = f.text_field :name, class: "form-control"
+        .form-group
+          = f.label :member_num, "number of member" , class: "control-label"
+          = f.number_field :member_num, class: "form-control"
+        .form-group
+          = f.label :date, "date" , class: "control-label"
+          = f.datetime_select :date, class: "form-control"
+        = f.submit 'submit', class: "btn btn-primary"
+    %div.tab-pane{id: "exclusive"}
+      = form_for @booking do |f|
+        .form-group
+          = f.label :member_num, "number of member" , class: "control-label"
+          = f.number_field :member_num, class: "form-control"
+        .form-group
+          = f.label :date, "when will your stay starts?" , class: "control-label"
+          = f.date_select :date, class: "form-control"
+        = f.submit 'submit', class: "btn btn-primary"
