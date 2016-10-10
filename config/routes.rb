@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'orders/exclusive'
+
+  get 'orders/normal'
+
+  get 'orders/create'
+
+  get 'orders/destroy'
+
   devise_for :users
   root to: 'static_pages#home'
   resources :bookings, :only=> [:new, :create]
