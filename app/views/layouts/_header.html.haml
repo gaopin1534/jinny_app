@@ -11,8 +11,12 @@
       %ul.nav.navbar-nav
         %li
           = link_to 'Booking Procedures', static_pages_procedure_path
-        %li
-          = link_to 'Book Now', new_booking_path
+        - if user_signed_in?
+          %li
+            = link_to 'Book Now', new_user_order_path(current_user.id)
+        - else
+          %li
+            = link_to 'Book Now', '#'
         %li
           = link_to 'About', static_pages_about_path
         %li

@@ -1,13 +1,25 @@
 class OrdersController < ApplicationController
-  def exclusive
-  end
-
-  def normal
+  def new
+    @order = Order.new
+    @order.bookings.build
   end
 
   def create
+    order = Order.new(order_params)
+    order.save
+  end
+
+  def show
+  end
+
+  def index
   end
 
   def destroy
   end
+
+  private
+    def order_params
+      params.require(:order).permit(:user_id, :plan_type, :member_num, :start_date, :end_date, bookings_attributes: [:restaurant_name, :member_num, :description, :date])
+    end
 end

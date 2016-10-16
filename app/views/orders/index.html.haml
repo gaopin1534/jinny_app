@@ -1,0 +1,22 @@
+%div.container
+  %h1 Orders
+  %table.table
+    %thead
+      %tr
+        %th
+          plan type
+        %th
+          number of members
+        %th
+          date
+    %tbody
+      - current_user.orders.each do |order|
+        %tr
+          %td
+            = order.plan_type
+          %td
+            = order.member_num
+          %td
+            = order.start_date
+            = "~"
+            = order.end_date
