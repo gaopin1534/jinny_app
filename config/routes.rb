@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'static_pages#home'
   resources :users, :only => [:show] do
-    resources :orders, :only=> [:index, :show, :new, :create] do
+    resources :orders, :only=> [:index, :show, :new, :create, :destroy] do
       resources :bookings, :only=> [:index]
     end
   end

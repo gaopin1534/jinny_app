@@ -19,6 +19,8 @@ class OrdersController < ApplicationController
   end
 
   def destroy
+    Order.destroy(params[:id])
+    redirect_to user_orders_path(current_user), notice: "deleted an order"
   end
 
   private
