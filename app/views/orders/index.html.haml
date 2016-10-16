@@ -9,6 +9,8 @@
           number of members
         %th
           date
+        %th
+          bookings
     %tbody
       - current_user.orders.each do |order|
         %tr
@@ -20,3 +22,8 @@
             = order.start_date
             = "~"
             = order.end_date
+          %td
+            - if order.plan_type == 'normal'
+              = link_to 'show bookings', user_order_bookings_path(user_id: params[:user_id], order_id: order.id)
+            - else
+              = "-"

@@ -2,4 +2,9 @@
   %aside.col-mid-4
     %section
       %h1
+        = @user.name
+      %h3
+        email:
         = @user.email
+      %h3
+        = link_to 'Orders', user_orders_path(@user)

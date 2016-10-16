@@ -1,10 +1,13 @@
 
-Rails.application.routes.draw do  get 'orders/exclusive'
+Rails.application.routes.draw do
+  get 'bookings/index'
 
   devise_for :users
   root to: 'static_pages#home'
   resources :users, :only => [:show] do
-    resources :orders, :only=> [:index, :show, :new, :create]
+    resources :orders, :only=> [:index, :show, :new, :create] do
+      resources :bookings, :only=> [:index]
+    end
   end
   get 'static_pages/procedure'
   get 'static_pages/about'

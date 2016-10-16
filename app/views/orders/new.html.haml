@@ -23,6 +23,9 @@
             = ff.label :member_num, "number of member" , class: "control-label"
             = ff.number_field :member_num, class: "form-control"
           .form-group
+            = ff.label :description, "note" , class: "control-label"
+            = ff.text_area :description, class: "form-control"
+          .form-group
             = ff.label :date, "date" , class: "control-label"
             %br
             = ff.datetime_select :date, class: "form-control"
