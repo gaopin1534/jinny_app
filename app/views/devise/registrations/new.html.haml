@@ -4,6 +4,10 @@
     %div.alert
       = devise_error_messages!
     .field
+      = f.label :name
+      %br/
+      = f.text_field :name
+    .field
       = f.label :email
       %br/
       = f.email_field :email, autofocus: true
