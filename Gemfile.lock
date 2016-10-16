@@ -174,6 +174,10 @@ GEM
     multi_json (1.12.1)
     mysql2 (0.4.4)
     nenv (0.3.0)
+    nested_form_fields (0.8)
+      coffee-rails (>= 3.2.1)
+      jquery-rails
+      rails (>= 3.2.0)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -192,6 +196,11 @@ GEM
     pry-byebug (3.4.0)
       byebug (~> 9.0)
       pry (~> 0.10)
+    pry-doc (0.9.0)
+      pry (~> 0.9)
+      yard (~> 0.8)
+    pry-nav (0.2.4)
+      pry (>= 0.9.10, < 0.11.0)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     quiet_assets (1.1.0)
@@ -321,6 +330,7 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    yard (0.9.5)
 
 PLATFORMS
   ruby
@@ -345,7 +355,11 @@ DEPENDENCIES
   jquery-rails
   less-rails
   mysql2
+  nested_form_fields
+  pry
   pry-byebug
+  pry-doc
+  pry-nav
   pry-rails
   quiet_assets
   rails (= 4.2.6)

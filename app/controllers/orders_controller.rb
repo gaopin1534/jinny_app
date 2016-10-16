@@ -6,6 +6,9 @@ class OrdersController < ApplicationController
 
   def create
     order = Order.new(order_params)
+    if !order.bookings.empty?
+      order.set_date
+    end
     order.save
   end
 
@@ -20,6 +23,6 @@ class OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:order).permit(:user_id, :plan_type, :member_num, :start_date, :end_date, bookings_attributes: [:restaurant_name, :member_num, :description, :date])
+      params.require(:order).permit(:user_id, :plan_type, :member_num, :start_date, :end_date, bookings_attributes: [:id, :restaurant_name, :member_num, :description, :date, :destroy])
     end
 end

@@ -15,18 +15,23 @@
       = form_for [current_user, @order] do |f|
         = f.hidden_field :user_id, value: current_user.id
         = f.hidden_field :plan_type, value: "normal"
-        = form_for :bookings do |f|
+        = f.nested_fields_for :bookings do |ff|
           .form-group
-            = f.label :name, "where to book?" , class: "control-label"
-            = f.text_field :name, class: "form-control"
+            = ff.label :restaurant_name, "where to book?" , class: "control-label"
+            = ff.text_field :restaurant_name, class: "form-control"
           .form-group
-            = f.label :member_num, "number of member" , class: "control-label"
-            = f.number_field :member_num, class: "form-control"
+            = ff.label :member_num, "number of member" , class: "control-label"
+            = ff.number_field :member_num, class: "form-control"
           .form-group
-            = f.label :date, "date" , class: "control-label"
+            = ff.label :date, "date" , class: "control-label"
             %br
-            = f.datetime_select :date, class: "form-control"
-          = f.submit 'submit', class: "btn btn-primary"
+            = ff.datetime_select :date, class: "form-control"
+            %div.rightBtn
+              = ff.remove_nested_fields_link 'Delete', class: "btn btn-danger"
+        = f.add_nested_fields_link :bookings, 'Add new', class: "btn btn-primary rightBtn"
+        %br
+        %br
+        = f.submit 'submit', class: "btn btn-primary"
     %div.tab-pane{id: "exclusive"}
       = form_for [current_user, @order] do |f|
         .form-group
