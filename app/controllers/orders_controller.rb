@@ -25,6 +25,6 @@ class OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:order).permit(:user_id, :plan_type, :member_num, :start_date, :end_date, bookings_attributes: [:id, :restaurant_name, :member_num, :description, :date, :destroy])
+      params.require(:order).permit(:user_id, :plan_type, :member_num, :start_date, :end_date, bookings_attributes: [:id, :restaurant_name, :member_num, :description, :date, :_destroy])
     end
 end
