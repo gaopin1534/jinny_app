@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'bookings/index'
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'static_pages#home'
   resources :users, :only => [:show] do
     resources :orders, :only=> [:index, :show, :new, :create, :destroy] do
