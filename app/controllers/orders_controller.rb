@@ -5,11 +5,13 @@ class OrdersController < ApplicationController
   end
 
   def create
-    order = Order.new(order_params)
-    if !order.bookings.empty?
-      order.set_date
+    @order = Order.new(order_params)
+    if !@order.bookings.empty?
+      @order.set_date
     end
-    order.save
+    if !@order.save
+      render :new
+    end
   end
 
   def show

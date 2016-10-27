@@ -2,6 +2,12 @@
   %h2
     %strong
       Book Now!!
+  - if @order.errors.any?
+    %div.alert.alert-danger
+      - @order.errors.each do |attr, message|
+        %li
+          = attr.to_s + ' ' + message
+
   %ul.nav.nav-tabs
     %li.nav-item.active
       %a.nav-link.bg-primary{href: "#normal", data: {toggle: "tab"}}
