@@ -10,6 +10,9 @@ Rails.application.routes.draw do
       resources :bookings, :only=> [:index]
     end
   end
+  get 'manage/index'
+  get 'manage/bookings'
+  get 'manage/switch'
   get 'static_pages/procedure'
   get 'static_pages/about'
   get 'inquiry/index'

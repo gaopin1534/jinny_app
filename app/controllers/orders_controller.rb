@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user, only: [:new, :create, :index, :destroy]
+
   def new
     @order = Order.new
     @order.bookings.build

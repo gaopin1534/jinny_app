@@ -26,6 +26,14 @@ class Order < ActiveRecord::Base
     end
   end
 
+  def switch
+    if self.done
+      self.done = false
+    else
+      self.done = true
+    end
+  end
+
   def exclusive?
     plan_type == "exclusive"
   end

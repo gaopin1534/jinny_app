@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019140241) do
+ActiveRecord::Schema.define(version: 20161027143547) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "order_id",        limit: 4
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20161019140241) do
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.integer  "member_num", limit: 4
+    t.boolean  "done"
   end
 
   create_table "users", force: :cascade do |t|

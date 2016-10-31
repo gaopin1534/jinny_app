@@ -1,0 +1,29 @@
+%div.container
+  %h1
+    = "Bookings for stay during"
+    = @order.start_date
+    = "~"
+    = @order.end_date
+  %table.table
+    %thead
+      %tr
+        %th
+          restaurant_name
+        %th
+          number of members
+        %th
+          date
+        %th
+          note
+    %tbody
+      - @order.bookings.each do |booking|
+        %tr
+          %td
+            = booking.restaurant_name
+          %td
+            = booking.member_num
+          %td
+            = booking.date
+          %td
+            = booking.description
+  = link_to 'back', :back, class: "btn btn-primary rightBtn"

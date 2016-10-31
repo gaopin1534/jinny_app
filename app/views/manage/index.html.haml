@@ -1,0 +1,45 @@
+%div.container
+  %h1 Orders
+  %table.table
+    %thead
+      %tr
+        %th
+          user name
+        %th
+          email
+        %th
+          plan type
+        %th
+          number of members
+        %th
+          date
+        %th
+          bookings
+        %th
+          switch
+
+    %tbody
+      - @orders.each do |order|
+        %tr
+          %td
+            = order.user.name
+          %td
+            = order.user.email
+          %td
+            = order.plan_type
+          %td
+            = order.member_num
+          %td
+            = order.start_date
+            = "~"
+            = order.end_date
+          %td
+            - if order.plan_type == 'normal'
+              = link_to 'show bookings', manage_bookings_path(id: order.id)
+            - else
+              = "-"
+          %td
+            - if order.done
+              = link_to 'done', manage_switch_path(id: order.id), class: "btn btn-primary"
+            - else
+              = link_to 'not done', manage_switch_path(id: order.id), class: "btn btn-danger"
