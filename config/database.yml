@@ -34,6 +34,7 @@ production:
   encoding: utf8
   database: Rails_production
   pool: 5
-  username: railsuser
+  # username: railsuser
   password: <%= ENV['DB_PASS'] %>
-  socket: /tmp/mysql.sock
+  # socket: /tmp/mysql.sock
+  host: <%= ENV['DB_URL'] %>
