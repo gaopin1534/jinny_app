@@ -26,7 +26,6 @@ gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
 gem 'uglifier', '>= 1.3.0'
 
-
 # Use Unicorn as the app server
 gem 'unicorn'
 
